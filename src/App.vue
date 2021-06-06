@@ -15,7 +15,12 @@
         <br/>
         <br/>
 
-        <button class="btn btn-primary bold-text" @click="tellStitcherApp()" type="submit">
+        <button
+          class="btn btn-primary bold-text"
+          @click="tellStitcherApp()"
+          type="submit"
+          :disabled="!message"
+        >
           Tell stitcher app
         </button>
       </div>
@@ -31,7 +36,8 @@ export default {
   name: 'App',
   data() {
     return {
-      message: ''
+      message: '',
+      sticherAppDomain: process.env.VUE_APP_STITCHER_DOMAIN
     }
   },
   methods: {
@@ -44,7 +50,26 @@ export default {
       
       // call global helper method to update stitcher app about the route change
       updateParentApp(msg)
+    },
+    listenForStitcherMessage(event) {
+      console.log('this.sticherAppDomain', this.sticherAppDomain)
+      console.log('event.origin', event.origin)
+      // check if the message come from a stitcher app
+      if (this.sticherAppDomain && this.sticherAppDomain === event.origin) {
+        // check if the message format is valid
+        if ( event.data && event.data.action) {
+          if (event.data.action === 'alert' && event.data.info) {
+            window.alert(event.data.info);
+          }
+        }
+      }
     }
+  },
+  mounted() {
+    window.addEventListener('message', this.listenForStitcherMessage)
+  },
+  beforeUnmount () {
+    window.removeEventListener('message', this.listenForStitcherMessage)
   }
 }
 </script>
