@@ -1,20 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="row justify-content-center align-item-center text-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h3>This child application aims to show you how communication between can be done</h3>
+      </div>
+    </div>
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
+body {
+  background-color: aliceblue;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,5 +26,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: aliceblue;
+
 }
 </style>
