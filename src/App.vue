@@ -15,7 +15,7 @@
         <br/>
         <br/>
 
-        <button class="btn btn-primary bold-text" @click="tellStitcherApp()">
+        <button class="btn btn-primary bold-text" @click="tellStitcherApp()" type="submit">
           Tell stitcher app
         </button>
       </div>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { updateParentApp } from '@/helpers/updateParentRoute'
+import { updateParentApp } from '@/helpers/updateParentApp'
 
 export default {
   name: 'App',
