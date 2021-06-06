@@ -52,8 +52,6 @@ export default {
       updateParentApp(msg)
     },
     listenForStitcherMessage(event) {
-      console.log('this.sticherAppDomain', this.sticherAppDomain)
-      console.log('event.origin', event.origin)
       // check if the message come from a stitcher app
       if (this.sticherAppDomain && this.sticherAppDomain === event.origin) {
         // check if the message format is valid
