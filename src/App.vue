@@ -3,7 +3,7 @@
     <div class="row justify-content-center align-item-center text-center">
       <div class="col-12 col-md-10 col-lg-8">
         <h3>Child app 1</h3>
-        <p>This child application aims to show you how communication between stitcher app and parent can be done</p>
+        <p>This child application aims to show you how communication between stitcher app and child app can be done</p>
         <br/>
         <br/>
         
