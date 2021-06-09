@@ -1,4 +1,4 @@
-function updateParentApp(msg) {
+function updateStitcherApp(msg) {
   const stitcherAppDomain = process.env.VUE_APP_STITCHER_DOMAIN // get stitcher app URL
 
   try {
@@ -9,4 +9,4 @@ function updateParentApp(msg) {
   }
 }
 
-export { updateParentApp };
+export { updateStitcherApp };

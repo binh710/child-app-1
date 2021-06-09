@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { updateParentApp } from '@/helpers/updateParentApp'
+import { updateStitcherApp } from '@/helpers/updateStitcherApp'
 
 export default {
   name: 'App',
@@ -49,7 +49,7 @@ export default {
       }
       
       // call global helper method to update stitcher app about the route change
-      updateParentApp(msg)
+      updateStitcherApp(msg)
     },
     listenForStitcherMessage(event) {
       // check if the message come from a stitcher app
